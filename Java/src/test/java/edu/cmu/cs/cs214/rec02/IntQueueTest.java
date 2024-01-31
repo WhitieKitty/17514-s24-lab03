@@ -121,6 +121,7 @@ public class IntQueueTest {
             mQueue.enqueue(i);
         }
         assertEquals(mQueue.size(), 28);
+        assertEquals(mQueue.peek().intValue(), 2);
 
     }
 

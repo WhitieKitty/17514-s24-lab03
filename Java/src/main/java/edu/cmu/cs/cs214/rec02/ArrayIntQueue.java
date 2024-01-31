@@ -101,11 +101,11 @@ public class ArrayIntQueue implements IntQueue {
             int newCapacity = 2 * oldCapacity + 1;
             int[] newData = new int[newCapacity];
             for (int i = head; i < oldCapacity; i++) {
-                newData[i - head] = elementData[i];
-            }
-            for (int i = 0; i < head; i++) {
-                newData[head - i] = elementData[i];
-            }
+                newData[i - head] = elementData[i]; // head ... oldCapacity - 1
+            } // 0 .. oldCapacity - head - 1
+            // for (int i = 0; i < head; i++) {
+            //     newData[i - head + oldCapacity] = elementData[i]; // 0 .. head - 1
+            // } // oldCapacity - head .. oldCapacity - 1
             elementData = newData;
             head = 0;
         }
